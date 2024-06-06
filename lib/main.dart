@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:game_galaxy/components/onboarding/onboarding_view.dart';
 import 'package:game_galaxy/db/local.dart';
 import 'package:game_galaxy/models/users.dart';
-import 'package:game_galaxy/views/main_screen.dart';
-import 'package:game_galaxy/views/splash_screen.dart';
+import 'package:game_galaxy/views/login_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
@@ -31,7 +30,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: onboarding ? const MainScreen() : const OnboardingView(),
+      home: onboarding ? const LoginPage() : const OnboardingView(),
     );
   }
 }
