@@ -3,7 +3,6 @@ import 'package:game_galaxy/views/favorite_page.dart';
 import 'package:game_galaxy/views/home_page.dart';
 import 'package:game_galaxy/utils/color.dart';
 import 'package:game_galaxy/views/logout.dart';
-import 'package:game_galaxy/views/profile_page.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -18,7 +17,6 @@ class _MainScreenState extends State<MainScreen> {
   List<Widget> _screens = [
     const Home(),
     const FavoritePage(),
-    const ProfilePage(),
     const LogoutPage(),
   ];
 
@@ -47,10 +45,6 @@ class _MainScreenState extends State<MainScreen> {
           BottomNavigationBarItem(
             icon: const Icon(Icons.favorite),
             label: 'Favorites',
-          ),
-          BottomNavigationBarItem(
-            icon: const Icon(Icons.person),
-            label: 'Profile',
           ),
           BottomNavigationBarItem(
             icon: const Icon(Icons.logout),
