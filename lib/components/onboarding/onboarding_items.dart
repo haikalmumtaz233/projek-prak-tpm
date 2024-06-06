@@ -8,9 +8,9 @@ class OnboardingItems {
             "Temukan game favoritmu dengan mudah dan cepat. Jelajahi berbagai kategori dan genre untuk menemukan permainan yang sesuai dengan seleramu",
         image: "assets/onboarding1.gif"),
     OnboardingInfo(
-        title: "Multi Currency",
+        title: "Free to Play",
         descriptions:
-            "Nikmati kemudahan bertransaksi dengan berbagai mata uang. Ganti dan gunakan mata uang sesuai kebutuhanmu tanpa repot.",
+            "Nikmati game secara gratis!. Anda tidak perlu keluar uang sedikit pun",
         image: "assets/onboarding2.png"),
     OnboardingInfo(
         title: "Safety Secure",
