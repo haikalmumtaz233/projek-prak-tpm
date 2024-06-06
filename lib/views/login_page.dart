@@ -35,7 +35,7 @@ class _LoginPageState extends State<LoginPage> {
 
   void checkInputForLogin() async {
     var userBox = await Hive.openBox<Users>("userBox");
-    bool userFound = false; // Flag to track if credentials match
+    bool userFound = false;
 
     for (int i = 0; i < userBox.length; i++) {
       if (userBox.getAt(i)!.username == _usernameController.text &&
@@ -46,12 +46,11 @@ class _LoginPageState extends State<LoginPage> {
         pref.setInt("accIndex", i);
         Navigator.pushReplacement(
             context, MaterialPageRoute(builder: (context) => MainScreen()));
-        break; // Exit the loop since credentials are found and valid
+        break;
       }
     }
 
     if (!userFound) {
-      // Show the Snackbar if no credentials matched
       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
         content: Text("Username or Password is Wrong"),
         backgroundColor: Colors.red,
@@ -59,7 +58,7 @@ class _LoginPageState extends State<LoginPage> {
       ));
     }
 
-    await userBox.close(); // Close the Hive box
+    await userBox.close();
   }
 
   void clearUserBox() async {
@@ -91,10 +90,8 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     checkIfLogedIn();
-    // clearUserBox();
   }
 
   @override
@@ -103,7 +100,6 @@ class _LoginPageState extends State<LoginPage> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-      
       ),
       backgroundColor: Colors.grey[300],
       body: SafeArea(

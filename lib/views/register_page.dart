@@ -67,7 +67,6 @@ class _RegisterPageState extends State<RegisterPage> {
     var userBox = await Hive.openBox<Users>("userBox");
     pref = await SharedPreferences.getInstance();
 
-    // Check if the username already exists
     bool userFound =
         userBox.values.any((user) => user.username == _usernameController.text);
 
@@ -89,14 +88,8 @@ class _RegisterPageState extends State<RegisterPage> {
       );
 
       await userBox.add(user);
-
-      // Set the accIndex based on the count of users in the Hive box
       int userCount = userBox.length;
       await pref.setInt("accIndex", userCount - 1);
-      // Comment out the line below to prevent automatic login
-      // await pref.setBool("logedIn", true);
-
-      // Navigate to the login page instead of main screen after registration
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
         return LoginPage();
       }));

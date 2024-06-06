@@ -118,7 +118,7 @@ class _FavoritePageState extends State<FavoritePage> {
                     ),
                   );
                   if (result == true) {
-                    _loadFavoriteGames(); // Reload favorite games when a change is made
+                    _loadFavoriteGames();
                   }
                 },
               );

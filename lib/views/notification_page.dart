@@ -26,7 +26,6 @@ class _NotificationPageState extends State<NotificationPage> {
       final List<int> favoriteIds = await SaveToLocalDb.getFavorites();
       final List<Game> allGames = await ApiDataSource.instance.loadGames();
 
-      // Filter favorite games based on IDs
       final List<Game> favoriteGames =
           allGames.where((game) => favoriteIds.contains(game.id)).toList();
 
